@@ -5,7 +5,7 @@ import InfoService from "./services/InfoService";
 import ThrottlingService from "./services/ThrottlingService";
 import ConfigService from "./services/ConfigService";
 import $ from 'jquery';
-import 'jquery-ui-bundle';
+// import 'jquery-ui-bundle';
 import html2canvas from "html2canvas";
 
 const RAD_TO_DEG = 180.0 / Math.PI;
