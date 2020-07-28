@@ -1,11 +1,15 @@
 import React, { Fragment } from "react";
 import styles from "./style.css";
-import '../utils/js/index.js';
+import init from '../utils/js/index.js';
 import dottedRec from '../assets/images/dottedRec.png';
 import sliderBackground from '../assets/images/slider-background.svg';
 
 class GMapify extends React.Component {
 
+  componentDidMount() {
+    init();
+  }
+  
   render() {
     return (
       <>
@@ -19,7 +23,7 @@ class GMapify extends React.Component {
           id="toolbar"
           style={{ position: "absolute", top: "10px", left: "10px" }}
         >
-          <div className={styles.btnGroup}>
+          <div className={`${styles.btnGroup} btn-group`}>
             <button
                 id="whiteboardLockBtn"
                 style={{"backgroundColor": "orange"}}
@@ -33,7 +37,7 @@ class GMapify extends React.Component {
             </button>
           </div>
 
-            <div className={`${styles.btnGroup} ${styles.whiteboardEditGroup}`}>
+            <div className={`${styles.btnGroup} ${styles.whiteboardEditGroup} btn-group`}>
                 <button id="whiteboardTrashBtn" title="Clear the whiteboard" type="button">
                     <i className="fa fa-trash"></i>
                 </button>
@@ -53,7 +57,7 @@ class GMapify extends React.Component {
                 </button>
             </div>
 
-            <div className={`${styles.btnGroup} ${styles.whiteboardEditGroup}`}>
+            <div className={`${styles.btnGroup} ${styles.whiteboardEditGroup} btn-group`}>
                 <button tool="mouse" title="Take the mouse" type="button" className={`${styles.whiteboardTool} whiteboard-tool`}>
                     <i className="fa fa-mouse-pointer"></i>
                 </button>
@@ -97,7 +101,7 @@ class GMapify extends React.Component {
                 </button>
             </div>
 
-            <div className={`${styles.btnGroup} ${styles.whiteboardEditGroup}`}>
+            <div className={`${styles.btnGroup} ${styles.whiteboardEditGroup} btn-group`}>
                 <button style={{"width": "190px", "cursor": "default"}}>
                     <div
                         className="activeToolIcon"
@@ -117,11 +121,11 @@ class GMapify extends React.Component {
                     <input
                         title="Thickness"
                         id="whiteboardThicknessSlider"
+                        className={styles.whiteboardThicknessSlider}
                         style={{"position": "absolute", "left": "9px", "width": "130px", "top": "15px"}}
                         type="range"
                         min="1"
                         max="50"
-                        value="3"
                     />
                     <div
                         id="whiteboardColorpicker"
@@ -138,7 +142,7 @@ class GMapify extends React.Component {
                 </button>
             </div>
 
-            <div className={`${styles.btnGroup} ${styles.whiteboardEditGroup}`}>
+            <div className={`${styles.btnGroup} ${styles.whiteboardEditGroup} btn-group`}>
                 <button id="addImgToCanvasBtn" title="Upload Image to whiteboard" type="button">
                     <i className="fas fa-image"></i>
                     <i
@@ -173,7 +177,7 @@ class GMapify extends React.Component {
                 <input style={{"display": "none"}} id="myFile" type="file" />
             </div>
 
-            <div className={styles.btnGroup}>
+            <div className={`${styles.btnGroup} btn-group`}>
                 <button id="saveAsImageBtn" title="Save whiteboard as image" type="button">
                     <i className="fas fa-image"></i>
                     <i
@@ -230,7 +234,7 @@ class GMapify extends React.Component {
                 </button>
             </div>
 
-            <div className={`${styles.btnGroup} minGroup`}>
+            <div className={`${styles.btnGroup} minGroup btn-group`}>
                 <button
                     style={{"width": "25px", "padding": "11px 11px"}}
                     id="minMaxBtn"
@@ -251,7 +255,7 @@ class GMapify extends React.Component {
             </div>
         </div>
 
-        <div id="whiteboardInfoContainer">
+        <div id="whiteboardInfoContainer" className={styles.whiteboardInfoContainer}>
             <p><b>Whiteboard information:</b></p>
             <p># connected users: <i id="connectedUsersCount">0</i></p>
             <p>Smallest screen resolution: <i id="smallestScreenResolution">Unknown.</i></p>

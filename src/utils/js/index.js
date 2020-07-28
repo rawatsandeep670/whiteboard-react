@@ -8,7 +8,7 @@ import "./icons";
 import $ from 'jquery';
 import main from "./main";
 
-$(document).ready(function () {
+const init = () => {
     // Set correct width height on mobile browsers
     const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
     if (isChrome) {
@@ -20,4 +20,6 @@ $(document).ready(function () {
     }
 
     main();
-});
+}
+
+export default init;

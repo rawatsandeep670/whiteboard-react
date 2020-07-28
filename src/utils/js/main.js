@@ -1,7 +1,7 @@
 // import keymage from "keymage";
 import whiteboard from "./whiteboard";
 // import keybinds from "./keybinds";
-// import Picker from "vanilla-picker";
+import Picker from "vanilla-picker";
 import { dom } from "@fortawesome/fontawesome-svg-core";
 // import pdfjsLib from "pdfjs-dist/webpack";
 import shortcutFunctions from "./shortcutFunctions";
@@ -143,7 +143,7 @@ function showBasicAlert(html, newOptions) {
 }
 
 function initWhiteboard() {
-    $(document).ready(function () {
+    
         // by default set in readOnly mode
         // ReadOnlyService.activateReadOnlyMode();
 
@@ -567,6 +567,7 @@ function initWhiteboard() {
         // On thickness slider change
         $("#whiteboardThicknessSlider").on("input", function () {
             if (ReadOnlyService.readOnlyActive) return;
+            console.warn('input val', $(this).val());
             whiteboard.setStrokeThickness($(this).val());
         });
 
@@ -740,13 +741,13 @@ function initWhiteboard() {
             // whiteboard.dropIndicator.hide();
         });
 
-        // new Picker({
-        //     parent: $("#whiteboardColorpicker")[0],
-        //     color: "#000000",
-        //     onChange: function (color) {
-        //         whiteboard.setDrawColor(color.rgbaString);
-        //     },
-        // });
+        new Picker({
+            parent: $("#whiteboardColorpicker")[0],
+            color: "#000000",
+            onChange: function (color) {
+                whiteboard.setDrawColor(color.rgbaString);
+            },
+        });
 
         // on startup select mouse
         shortcutFunctions.setTool_mouse();
@@ -767,7 +768,7 @@ function initWhiteboard() {
 
         // In any case, if we are on read-only whiteboard we activate read-only mode
         if (ConfigService.isReadOnly) ReadOnlyService.activateReadOnlyMode();
-    });
+    
 
     //Prevent site from changing tab on drag&drop
     window.addEventListener(
