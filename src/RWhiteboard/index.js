@@ -4,7 +4,7 @@ import init from '../utils/js/index.js';
 import dottedRec from '../assets/images/dottedRec.png';
 import sliderBackground from '../assets/images/slider-background.svg';
 
-class GMapify extends React.Component {
+class RWhiteboard extends React.Component {
 
   componentDidMount() {
     init();
@@ -291,4 +291,4 @@ class GMapify extends React.Component {
   }
 };
 
-export default GMapify;
+export default RWhiteboard;

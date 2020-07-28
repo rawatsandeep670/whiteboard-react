@@ -8,6 +8,8 @@ import "./icons";
 import $ from 'jquery';
 import main from "./main";
 
+window.jQuery = $;
+
 const init = () => {
     // Set correct width height on mobile browsers
     const isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
@@ -19,6 +21,12 @@ const init = () => {
         $("head").append('<meta name="viewport" content="width=1400" />');
     }
 
+    if (!document.querySelector('#whiteboard-jquery-ui')) {
+        const script = document.createElement('script');
+        script.setAttribute('id', 'whiteboard-jquery-ui');
+        script.src = 'https://code.jquery.com/ui/1.12.1/jquery-ui.min.js';
+        document.head.appendChild(script);
+    }
     main();
 }
 

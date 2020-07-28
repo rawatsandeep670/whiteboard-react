@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useRef } from 'react'
-import { GMapify } from 'g-mapify'
-import 'g-mapify/dist/index.css'
+import { RWhiteboard } from 'whiteboard-react'
+import 'whiteboard-react/dist/index.css'
 import './index.css'
 // import InputDefault from './components/Input';
 
@@ -15,7 +15,7 @@ const App = () => {
 
   return (
   <>
-    <GMapify />
+    <RWhiteboard />
   </>
   )
 }

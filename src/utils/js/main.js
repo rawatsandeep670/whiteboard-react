@@ -143,7 +143,7 @@ function showBasicAlert(html, newOptions) {
 }
 
 function initWhiteboard() {
-    
+
         // by default set in readOnly mode
         // ReadOnlyService.activateReadOnlyMode();
 
@@ -567,7 +567,6 @@ function initWhiteboard() {
         // On thickness slider change
         $("#whiteboardThicknessSlider").on("input", function () {
             if (ReadOnlyService.readOnlyActive) return;
-            console.warn('input val', $(this).val());
             whiteboard.setStrokeThickness($(this).val());
         });
 

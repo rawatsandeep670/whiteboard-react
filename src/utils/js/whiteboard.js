@@ -923,7 +923,6 @@ const whiteboard = {
             });
         });
         this.textContainer.append(textBox);
-        console.warn('textBox', textBox)
         textBox.draggable({
             handle: ".moveIcon",
             stop: function () {
