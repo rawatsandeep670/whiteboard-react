@@ -1,6 +1,6 @@
 {
   "name": "whiteboard-react",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "Whiteboard for react",
   "author": "Sandeep",
   "license": "ISC",
@@ -66,7 +66,6 @@
       "prepare-commit-msg": "exec < /dev/tty && git cz --hook || true"
     }
   },
-  
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"

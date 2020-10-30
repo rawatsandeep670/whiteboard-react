@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.1.0](https://github.com/rawatsandeep670/whiteboard-react/compare/v2.0.0...v2.1.0) (2020-10-30)
+
+
+### 🚀 Features
+
+* temp1 ([cb8d3d3](https://github.com/rawatsandeep670/whiteboard-react/commit/cb8d3d3e377d5732ae076f2bc495bfec7d62b213))
+
 ## [2.0.0](https://github.com/rawatsandeep670/whiteboard-react/compare/v1.0.1...v2.0.0) (2020-10-30)
 
 
